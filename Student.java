@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public class Student {
@@ -7,10 +8,10 @@ public class Student {
     private List<String> enrolledCourses;
 
 
-   public Student(String studentID,String name, List<String> enrolledCourses){
+   public Student(String studentID,String name){
     this.studentID = studentID;
     this.name = name;
-    this.enrolledCourses = enrolledCourses;
+    this.enrolledCourses = new ArrayList<>();
    }
 
    public void setStudentID(String studentID) {

@@ -5,10 +5,16 @@ public class Course {
     private String courseName;
     private ArrayList<String> enrolledStudents;
 
-    public Course(String courseCode, String courseName, ArrayList<String> enrolledStudents) {
+    private String scheduleDay;
+    private String scheduleTimeSlot;
+
+
+    public Course(String courseCode, String courseName, String scheduleDay, String scheduleTimeSlot) {
         this.courseCode = courseCode;
         this.courseName = courseName;
-        this.enrolledStudents = enrolledStudents;
+        this.scheduleDay = scheduleDay;
+        this.scheduleTimeSlot = scheduleTimeSlot;
+        this.enrolledStudents = new ArrayList<>();
     }
 
     public void setCourseCode(String courseCode) {
@@ -27,6 +33,22 @@ public class Course {
         return courseName;
     }
 
+    public void setScheduleDay(String scheduleDay) {
+        this.scheduleDay = scheduleDay;
+    }
+
+    public void setScheduleTimeSlot(String scheduleTimeSlot) {
+        this.scheduleTimeSlot = scheduleTimeSlot;
+    }
+
+    public String getScheduleDay() {
+        return scheduleDay;
+    }
+    
+    public String getScheduleTimeSlot() {
+        return scheduleTimeSlot;
+    }
+
     public void addStudent(String studentID){
         if(!enrolledStudents.contains(studentID)){
             enrolledStudents.add(studentID);
@@ -42,7 +64,7 @@ public class Course {
             enrolledStudents.remove(studentID);
             System.out.println("Removed student with ID: " + studentID + "from course: " + courseCode);
         }else{
-            System.out.println("Student with ID: " + studentID + "is not enrolled in course: " + courseCode);
+            System.out.println("Student with ID: " + studentID + " is not enrolled in course: " + courseCode);
         }
     }
 
